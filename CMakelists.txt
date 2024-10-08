@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.10)  
+project(Project LANGUAGES C)  
+  
+
+  
+# 添加可执行文件  
+add_executable(Project main.c display.c image_list.c interface.c time_thread.c touch_input.c)  
+  
+# 指定包含目录（使用相对路径）  
+# 假设头文件位于项目根目录下的include文件夹中  
+target_include_directories(Project PRIVATE ${CMAKE_SOURCE_DIR}/include)  
+# 如果头文件实际上位于mnt/hgfs/code/aiproject/include下，并且这是正确的路径，  
+# 那么下面的行将覆盖上面的行（但通常不推荐这样做，因为它依赖于特定环境）  
+# target_include_directories(Project PRIVATE /mnt/hgfs/code/aiproject/include)  
+  
+# 链接库  
+#target_link_libraries(Project PRIVATE MyLibrary)
